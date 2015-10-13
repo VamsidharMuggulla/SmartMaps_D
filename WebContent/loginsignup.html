@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Login/Sign-In</title>
+    
+    
+    <link rel="stylesheet" href="css/normalize.css">
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+        <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+      <link href='https://fonts.googleapis.com/css?family=Raleway:400,500' rel='stylesheet' type='text/css'>
+    
+    <style>
+      #map
+      {
+          display:none;
+      }
+      </style>
+    
+  </head>
+
+  <body>
+
+    <div class="logmod">
+  <div class="logmod__wrapper">
+      <span class="logmod__wrapper" style="font-family:Raleway;text-shadow: 1px 1px 1px #000;font-size:50px;height:70px;padding:22px;text-align:center;">SmartMaps</span>
+    <div class="logmod__container">
+        <ul class="logmod__tabs">
+        <li data-tabtar="lgm-2"><a href="#">Login</a></li>
+        <li data-tabtar="lgm-1"><a href="#">Sign Up</a></li>
+      </ul>
+      <div class="logmod__tab-wrapper">
+      <div class="logmod__tab lgm-1">
+        <div class="logmod__heading">
+          <!-- <span class="logmod__heading-subtitle">Enter your personal details <strong>to create an acount</strong></span> -->
+        </div>
+        <div class="logmod__form">
+          <form accept-charset="utf-8" class="simform">
+              <div class="sminputs">
+              <div class="input full">
+                <!-- <label class="string optional" for="user-name">Email*</label> -->
+                <input class="string optional" maxlength="255" id="user-name" placeholder="Username" type="text" size="50" required="required" />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input full">
+                <!-- <label class="string optional" for="user-name">Email*</label> -->
+                <input class="string optional" maxlength="255" id="user-email" placeholder="Email" type="email" size="50" required="required" />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input string optional">
+               <!-- <label class="string optional" for="user-pw">Password *</label> -->
+                <input class="string optional" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" required="required" />
+              </div>
+              <div class="input string optional">
+                <!-- <label class="string optional" for="user-pw-repeat">Repeat password *</label> -->
+                <input class="string optional" maxlength="255" id="user-pw-repeat" placeholder="Repeat password" type="password" size="50" required="required" />
+              </div>
+            </div>
+              <div class="sminputs">
+                  <div class="input full">
+                <!-- <label class="string optional" for="user-name">Email*</label> -->
+                <input class="string optional" maxlength="50" id="user-location" placeholder="City/Town" type="text" size="50" required="required" />
+              </div>
+              </div>
+               <div class="sminputs">
+                  <div class="input full">
+                <!-- <label class="string optional" for="user-name">Email*</label> -->
+                <input class="string optional" maxlength="255" id="user-mobile" placeholder="Mobile" type="text" size="50" required="required" />
+              </div>
+              </div>
+            <div class="simform__actions">
+              <input class="sumbit" name="commit" type="submit" value="Create Account" />
+              <span class="simform__actions-sidetext" style="padding:10px;"><a class="special" href="#" target="_blank" role="link">Terms, Conditions &amp; Privacy Ploicy  </a></span>
+            </div> 
+          </form>
+        </div> 
+
+      </div>
+      <div class="logmod__tab lgm-2">
+       <div class="logmod__heading">
+        <!--  <span class="logmod__heading-subtitle">Enter your email and password <strong>to sign in</strong></span> -->
+        </div> 
+        <div class="logmod__form">
+          <form id="my-form"accept-charset="utf-8" class="simform">
+            <div class="sminputs">
+              <div class="input full">
+                <!-- <label class="string optional" for="user-name">Email*</label> -->
+                <input name="username" class="string optional" maxlength="255" id="user-email" placeholder="User Name" type="text" size="50" required="required" />
+              </div>
+            </div>
+            <div class="sminputs">
+              <div class="input full">
+                <!-- <label class="string optional" for="user-pw">Password *</label> -->
+                <input class="string optional" name="password" maxlength="255" id="user-pw" placeholder="Password" type="password" size="50" required="required" />
+                						<span class="hide-password">Show</span>
+              </div>
+            </div>
+            <div class="simform__actions">
+              <input class="sumbit" name="commit" type="submit" value="Log In" />
+              <span class="simform__actions-sidetext" style="padding:10px;"><a class="special" role="link" href="#">Forgot your password?</a></span>
+            </div> 
+          </form>
+        </div> 
+        <div class="logmod__alter">
+          <div class="logmod__alter-container">
+            <a href="#" class="connect facebook">
+              <div class="connect__icon">
+                <i class="fa fa-facebook"></i>
+              </div>
+              <div class="connect__context">
+                <span>Login with <strong>Facebook</strong></span>
+              </div>
+            </a>
+            <a href="#" class="connect googleplus">
+              <div class="connect__icon">
+                <i class="fa fa-google-plus"></i>
+              </div>
+              <div class="connect__context">
+                <span>Login with <strong>Google+</strong></span>
+              </div>
+            </a>
+          </div>
+        </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div id="map"></div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+        <script src="js/index.js"></script>
+      
+      
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+    (function($){
+        function processForm( e ){
+            $.ajax({
+                url: 'http://localhost:8080/SmartMaps/login/user/loginservice/log',
+                dataType: 'application/x-www-form-urlencoded',
+                //dataType: 'text',
+                type: 'post',
+                contentType: 'application/x-www-form-urlencoded',
+              data: $(this).serialize(),
+                success: function( data, textStatus, jQxhr ){
+                    $('#response pre').html( data );
+                },
+                error: function( jqXhr, textStatus, errorThrown ){
+                    console.log( errorThrown );
+                }
+            });
+
+            e.preventDefault();
+        }
+
+        $('#my-form').submit( processForm );
+    })(jQuery);
+</script>
+      
+<!-- <script>
+        var latitude,longitude;
+function getLocation() 
+{
+    if (navigator.geolocation) 
+	{
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } 
+	else 
+	{ 
+        document.writeln("Geolocation is not supported by this browser.");
+    }
+} 
+function showPosition(position)
+{
+	latitude=position.coords.latitude;
+	longitude=position.coords.longitude;
+}
+function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: {lat: 16.5060111, lng: 80.6640562}
+  });
+    getLocation();
+  var geocoder = new google.maps.Geocoder;
+  var infowindow = new google.maps.InfoWindow;
+    if(window.addEventListener){
+    window.addEventListener('load',function() {
+    geocodeLatLng(geocoder, map, infowindow);
+  });
+    }
+}
+
+function geocodeLatLng(geocoder, map, infowindow) {
+  var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+  geocoder.geocode({'location': latlng}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[1]) {
+        map.setZoom(11);
+        var marker = new google.maps.Marker({
+          position: latlng,
+          map: map
+        });
+        infowindow.setContent(results[1].formatted_address);
+          console.log(results[1].formatted_address);
+        infowindow.open(map, marker);
+          document.getElementById("user-location").value=results[1].formatted_address;
+      } else {
+        window.alert('No results found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAlZWSTsJPv3yRfVUnSxaXtbl-Dv6Bspek&signed_in=false&callback=initMap"
+        async defer></script>
+-->    
+  </body>
+</html>
